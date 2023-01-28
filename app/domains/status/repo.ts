@@ -1,4 +1,4 @@
-import { ApiRoutes } from "./../../types";
+import { ApiRoutes } from "../../types";
 import { Router } from "express";
 
 export function getStatus(router: Router) {

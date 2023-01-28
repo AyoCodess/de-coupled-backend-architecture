@@ -1,4 +1,4 @@
-import { productData } from "./../api/repo";
+import { productData } from "../api/repo";
 
 type Item = {
   [key: string]: string;
