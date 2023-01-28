@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 import { Router } from "express";
-import { createRouter } from "./domains";
+import { createRouter } from "./domains/createRouter";
 import { getServerStatus } from "./status";
 
 const port = 3000;
