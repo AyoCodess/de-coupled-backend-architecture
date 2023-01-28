@@ -2,9 +2,13 @@
 
 ## About
 
-looking at the concept of separating our Api from the framework.
+looking at the concept of separating our Api from any framework we may choose.
 
-`createRouter(router)` could take in any router, for example we currently use express so we pass the`const app = express()` into the function which would then help us create our api and use them if we wished, anywhere in our application.
+`createRouter(router);` could take in any router.
+
+For example we currently use express so we pass the `const router = Router();` into the `createRouter` function. This allows us create an api that is not coupled with the framework.
+
+`repo.ts` is where we create our framework specific functions and import them into their wrappers.
 
 ## Tech stack
 
@@ -12,8 +16,11 @@ ts node dev, express, ts-jest
 
 ## routes
 
-1. /signin
-2. /verify
-3. /products
+1. api/signin
+2. api/verify
+3. api/products
+4. /
 
 ## Automated tests
+
+basic tests for routes using `superTest`
