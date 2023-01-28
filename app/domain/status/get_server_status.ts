@@ -1,7 +1,6 @@
 import { Router } from "express";
+import * as repo from "./repo";
 
 export function getServerStatus(router: Router) {
-  router.get("/", (req, res) => {
-    res.send("ok");
-  });
+  repo.getStatus(router);
 }

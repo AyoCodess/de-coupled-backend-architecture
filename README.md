@@ -27,7 +27,7 @@ ts node dev, express, ts-jest
 1. api/signin
 2. api/verify
 3. api/products
-4. /
+4. /api
 
 ### Automated tests
 
