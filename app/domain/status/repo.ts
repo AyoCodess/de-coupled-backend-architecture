@@ -1,7 +1,9 @@
+import { ApiRoutes } from "./../../types";
 import { Router } from "express";
 
 export function getStatus(router: Router) {
-  router.get("/", (req, res) => {
+  const status = ApiRoutes.status;
+  router.get(status, (req, res) => {
     res.send("ok");
   });
 }
