@@ -1,11 +1,8 @@
+import { Router } from "express";
 import { createApi } from "./api";
 
-type IdentityApi = {
-  api: ReturnType<typeof createApi>;
-};
-
-export function createIdentityApi(): IdentityApi {
+export function createIdentityApi(app: Router) {
   return {
-    api: createApi(),
+    api: createApi(app),
   };
 }

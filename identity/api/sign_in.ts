@@ -1,3 +1,7 @@
-export function createSignIn() {
-  return () => "signing in user...";
+import { Router } from "express";
+
+export function createSignIn(app: Router) {
+  app.get("/", (req, res) => {
+    res.send("Hello World!");
+  });
 }

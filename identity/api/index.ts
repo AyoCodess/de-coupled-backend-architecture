@@ -1,13 +1,10 @@
+import { Router } from "express";
 import { createSignIn } from "./sign_in";
 import { createVerify } from "./verify";
 
-type Api = {
-  signIn: () => string;
-  verify: () => string;
-};
-export function createApi(): Api {
+export function createApi(app: Router) {
   return {
-    signIn: createSignIn(),
-    verify: createVerify(),
+    signIn: createSignIn(app),
+    verify: createVerify(app),
   };
 }

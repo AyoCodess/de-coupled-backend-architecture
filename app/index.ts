@@ -1,9 +1,10 @@
 import express from "express";
-import { createIdentityApi } from "../identity";
+import { createRouter } from "./domain/createRouter";
 
 const app = express();
 const port = 3000;
-const identity = createIdentityApi();
+
+createRouter(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
