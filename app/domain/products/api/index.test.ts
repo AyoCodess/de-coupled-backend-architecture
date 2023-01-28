@@ -12,9 +12,11 @@ describe("product api tests", () => {
     createGetProducts(router);
   });
 
-  it("should return test string", async () => {
+  it("should return json data", async () => {
     const response = await request(router).get(products);
     expect(response.status).toBe(200);
     expect(response.body).toEqual(productData);
   });
+
+
 });
