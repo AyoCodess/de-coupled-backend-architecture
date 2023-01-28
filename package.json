@@ -1,0 +1,11 @@
+{
+  "name": "returning_functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/app/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
