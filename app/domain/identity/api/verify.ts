@@ -1,9 +1,7 @@
 import { Router } from "express";
 import { ApiRoutes } from "../../../types";
+import * as repo from "./repo";
 
 export function createVerify(app: Router) {
-  const verify = ApiRoutes.identity.verify;
-  app.get(verify, (req, res) => {
-    res.send("verifying user...");
-  });
+  repo.verify(app);
 }

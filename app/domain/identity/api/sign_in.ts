@@ -1,9 +1,7 @@
 import { Router } from "express";
 import { ApiRoutes } from "../../../types";
+import * as repo from "./repo";
 
 export function createSignIn(app: Router) {
-  const signIn = ApiRoutes.identity.signIn;
-  app.get(signIn, (req, res) => {
-    res.send("signing in...");
-  });
+  repo.signIn(app);
 }
