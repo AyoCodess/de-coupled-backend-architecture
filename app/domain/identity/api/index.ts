@@ -8,3 +8,4 @@ export function createApi(app: Router) {
     verify: createVerify(app),
   };
 }
+export { createSignIn };
