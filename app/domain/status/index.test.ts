@@ -14,6 +14,6 @@ describe("product api tests", () => {
   it("should return test string", async () => {
     const response = await request(router).get(status);
     expect(response.status).toBe(200);
-    expect(response.body).toEqual({});
+    expect(response.text).toEqual("ok");
   });
 });
