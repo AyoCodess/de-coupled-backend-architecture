@@ -15,8 +15,6 @@ app.use("/api", router);
 createRouter(router);
 getServerStatus(router);
 
-console.log(router.stack);
-
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);
 });
