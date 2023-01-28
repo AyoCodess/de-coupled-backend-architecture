@@ -13,7 +13,7 @@ app.use(cors());
 app.use("/api", router);
 
 createRouter(router);
-getServerStatus(app);
+getServerStatus(router);
 
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);

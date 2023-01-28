@@ -2,9 +2,9 @@ import { Router } from "express";
 import { createIdentityApi } from "./identity";
 import { createProductsApi } from "./products";
 
-export function createRouter(app: Router) {
+export function createRouter(router: Router) {
   return {
-    identity: createIdentityApi(app),
-    products: createProductsApi(app),
+    identity: createIdentityApi(router),
+    products: createProductsApi(router),
   };
 }

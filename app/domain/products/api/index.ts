@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { createGetProducts } from "./get_products";
 
-export function createApi(app: Router) {
+export function createApi(router: Router) {
   return {
-    getProducts: createGetProducts(app),
+    getProducts: createGetProducts(router),
   };
 }

@@ -5,15 +5,15 @@ import { createGetProducts } from "./get_products";
 import { productData } from "./repo";
 
 describe("product api tests", () => {
-  let app = express();
+  let router = express();
   const products = ApiRoutes.products.getProducts;
 
   beforeEach(() => {
-    createGetProducts(app);
+    createGetProducts(router);
   });
 
   it("should return test string", async () => {
-    const response = await request(app).get(products);
+    const response = await request(router).get(products);
     expect(response.status).toBe(200);
     expect(response.body).toEqual(productData);
   });

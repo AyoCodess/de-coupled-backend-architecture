@@ -7,9 +7,9 @@ export const productData = {
   trousers: "£75",
 };
 
-export function getProducts(app: Router) {
+export function getProducts(router: Router) {
   const products = ApiRoutes.products.getProducts;
-  app.get(products, (req, res) => {
+  router.get(products, (req, res) => {
     res.send(productData);
   });
 }

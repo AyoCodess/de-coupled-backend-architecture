@@ -6,23 +6,23 @@ import { ApiRoutes } from "../../../types";
 import { createSignIn } from "./sign_in";
 
 describe("Sign In and verify APIs", () => {
-  let app = express();
+  let router = express();
   const signIn = ApiRoutes.identity.signIn;
   const verify = ApiRoutes.identity.verify;
 
   beforeEach(() => {
-    createSignIn(app);
-    createVerify(app);
+    createSignIn(router);
+    createVerify(router);
   });
 
   it("should return test string", async () => {
-    const response = await request(app).get(signIn);
+    const response = await request(router).get(signIn);
     expect(response.status).toBe(200);
     expect(response.text).toBe("signing in...");
   });
 
   it("should return test string", async () => {
-    const response = await request(app).get(verify);
+    const response = await request(router).get(verify);
     expect(response.status).toBe(200);
     expect(response.text).toBe("verifying user...");
   });

@@ -1,7 +1,7 @@
 import { Router } from "express";
 
-export function getServerStatus(app: Router) {
-  app.get("/", (req, res) => {
+export function getServerStatus(router: Router) {
+  router.get("/", (req, res) => {
     res.send("ok");
   });
 }
