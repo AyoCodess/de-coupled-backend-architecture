@@ -4,6 +4,6 @@ export const ApiRoutes = {
     verify: "/verify",
   },
   products: {
-    products: "/products",
+    getProducts: "/products",
   },
 };
