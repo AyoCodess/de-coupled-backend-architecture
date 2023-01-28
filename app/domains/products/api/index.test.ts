@@ -1,6 +1,6 @@
 import express from "express";
 import request from "supertest";
-import { ApiRoutes } from "../../../types";
+import { ApiRoutes } from "../../types";
 import { createGetProducts } from "./get_products";
 import { productData } from "./repo";
 
@@ -17,6 +17,4 @@ describe("product api tests", () => {
     expect(response.status).toBe(200);
     expect(response.body).toEqual(productData);
   });
-
-
 });

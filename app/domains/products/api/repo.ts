@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ApiRoutes } from "../../../types";
+import { ApiRoutes } from "../../types";
 
 export const productData = {
   shoe: "£100",

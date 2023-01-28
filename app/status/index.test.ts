@@ -1,6 +1,6 @@
 import express from "express";
 import request from "supertest";
-import { ApiRoutes } from "../../types";
+import { ApiRoutes } from "../domains/types";
 import { getServerStatus } from "./get_server_status";
 
 describe("product api tests", () => {

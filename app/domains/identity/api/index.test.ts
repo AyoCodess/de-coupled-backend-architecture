@@ -2,7 +2,7 @@ import { describe, expect } from "@jest/globals";
 import express from "express";
 import request from "supertest";
 import { createVerify } from "./verify";
-import { ApiRoutes } from "../../../types";
+import { ApiRoutes } from "../../types";
 import { createSignIn } from "./sign_in";
 
 describe("Sign In and verify APIs", () => {

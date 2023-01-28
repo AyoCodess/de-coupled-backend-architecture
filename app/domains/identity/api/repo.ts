@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ApiRoutes } from "../../../types";
+import { ApiRoutes } from "../../types";
 
 const signInRoute = ApiRoutes.identity.signIn;
 const verifyRoute = ApiRoutes.identity.verify;
