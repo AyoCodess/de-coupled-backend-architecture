@@ -1,6 +1,13 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const api_1 = require("../identity/api");
-const identity = (0, api_1.createIdentityApi)();
-console.log(identity.api.signIn());
-console.log(identity.api.verify());
+const express_1 = __importDefault(require("express"));
+const identity_1 = require("../identity");
+const app = (0, express_1.default)();
+const port = 3000;
+const identity = (0, identity_1.createIdentityApi)();
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+});

@@ -1,6 +1,10 @@
+import express from "express";
 import { createIdentityApi } from "../identity";
 
+const app = express();
+const port = 3000;
 const identity = createIdentityApi();
 
-console.log(identity.api.signIn());
-console.log(identity.api.verify());
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});

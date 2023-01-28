@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createIdentityApi = void 0;
-const api_1 = require("./api");
-function createIdentityApi() {
+exports.createApi = void 0;
+const sign_in_1 = require("./sign_in");
+const verify_1 = require("./verify");
+function createApi() {
     return {
-        api: (0, api_1.createApi)(),
+        signIn: (0, sign_in_1.createSignIn)(),
+        verify: (0, verify_1.createVerify)(),
     };
 }
-exports.createIdentityApi = createIdentityApi;
+exports.createApi = createApi;
