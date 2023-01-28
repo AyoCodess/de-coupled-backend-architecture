@@ -1,14 +1,18 @@
 import cors from "cors";
 import express from "express";
+import { Router } from "express";
 import { createRouter } from "./domain/createRouter";
 import { getServerStatus } from "./get_server_status";
 
-const app = express();
-app.use(express.json());
-app.use(cors());
 const port = 3000;
 
-createRouter(app);
+const app = express();
+const router = Router();
+app.use(express.json());
+app.use(cors());
+app.use("/api", router);
+
+createRouter(router);
 getServerStatus(app);
 
 app.listen(port, () => {

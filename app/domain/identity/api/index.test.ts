@@ -1,9 +1,9 @@
 import { describe, expect } from "@jest/globals";
-import { createSignIn } from ".";
 import express from "express";
 import request from "supertest";
 import { createVerify } from "./verify";
 import { ApiRoutes } from "../../../types";
+import { createSignIn } from "./sign_in";
 
 describe("Sign In and verify APIs", () => {
   let app = express();
