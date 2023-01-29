@@ -1,17 +1,15 @@
-import { Router } from "express";
-import { ApiRoutes } from "../../types";
-
-const signInRoute = ApiRoutes.identity.signIn;
-const verifyRoute = ApiRoutes.identity.verify;
-
-export function signIn(router: Router) {
-  router.get(signInRoute, (req, res) => {
-    res.send("signing in...");
-  });
+export function signIn() {
+  return {
+    ok: true,
+    message: "AUTHORIZED",
+    error: null,
+  };
 }
 
-export function verify(router: Router) {
-  router.get(verifyRoute, (req, res) => {
-    res.send("verifying user...");
-  });
+export function verify() {
+  return {
+    ok: true,
+    message: "VERIFYING",
+    error: null,
+  };
 }

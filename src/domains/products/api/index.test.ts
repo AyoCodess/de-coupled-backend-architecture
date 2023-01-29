@@ -9,7 +9,7 @@ describe("product api tests", () => {
   const products = ApiRoutes.products.getProducts;
 
   beforeEach(() => {
-    createGetProducts(router);
+    createGetProducts();
   });
 
   it("should return json data", async () => {

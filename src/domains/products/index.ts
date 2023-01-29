@@ -1,8 +1,15 @@
-import { Router } from "express";
-import { createApi } from "./api";
+import { createGetProducts } from "./api/get_products";
 
-export function createProductsApi(router: Router) {
+type ProductsApi = {
+  api: {
+    getProducts: ReturnType<typeof createGetProducts>;
+  };
+};
+
+export function createProductsApi(): ProductsApi {
   return {
-    api: createApi(router),
+    api: {
+      getProducts: createGetProducts(),
+    },
   };
 }

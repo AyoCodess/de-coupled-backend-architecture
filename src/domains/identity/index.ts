@@ -1,8 +1,18 @@
-import { Router } from "express";
-import { createApi } from "./api";
+import { createSignIn } from "./api/sign_in";
+import { createVerify } from "./api/verify";
 
-export function createIdentityApi(router: Router) {
+export type IdentityApi = {
+  api: {
+    signIn: ReturnType<typeof createSignIn>;
+    verify: ReturnType<typeof createVerify>;
+  };
+};
+
+export function createIdentityApi(): IdentityApi {
   return {
-    api: createApi(router),
+    api: {
+      signIn: createSignIn(),
+      verify: createVerify(),
+    },
   };
 }

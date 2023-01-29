@@ -1,14 +1,13 @@
-import express from "express";
+import express, { Router } from "express";
 import request from "supertest";
-import { ApiRoutes } from "../domains/types";
-import { getServerStatus } from "./get_server_status";
+import { createRouter } from "../domains";
+import { getStatus } from "./get_server_status";
 
 describe("product api tests", () => {
-  let router = express();
-  const status = ApiRoutes.status;
+  let router = Router();
 
   beforeEach(() => {
-    getServerStatus(router);
+    createRouter(router);
   });
 
   it("should return test string", async () => {
