@@ -9,3 +9,5 @@ export function getStatusMethod(
     res.send(getStatus());
   });
 }
+
+export * from "./get_server_status";

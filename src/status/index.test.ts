@@ -1,7 +1,7 @@
-import express, { Router } from "express";
+import express from "express";
 import request from "supertest";
 import { getStatusMethod } from ".";
-import { ApiRoutes } from "../domains/types";
+import { ApiRoutes } from "../domains/createRouter";
 import { getStatus } from "./get_server_status";
 
 describe("getStatusMethod", () => {

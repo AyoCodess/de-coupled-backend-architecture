@@ -1,4 +1,4 @@
-import { createGetProducts } from "./api/get_products";
+import { createGetProducts } from "./api";
 
 type ProductsApi = {
   api: {

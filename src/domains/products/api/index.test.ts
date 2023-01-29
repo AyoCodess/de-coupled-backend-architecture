@@ -2,8 +2,7 @@ import express from "express";
 import request from "supertest";
 import { getProductsMethod } from ".";
 import { createProductsApi } from "..";
-import { ApiRoutes } from "../../types";
-import { createGetProducts } from "./get_products";
+import { ApiRoutes } from "../../createRouter";
 import { productData } from "./repo";
 
 describe("product api tests", () => {

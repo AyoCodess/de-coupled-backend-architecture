@@ -1,12 +1,11 @@
 import { Router } from "express";
-import { getStatusMethod } from "../status";
-import { getStatus } from "../status/get_server_status";
+import { getStatus, getStatusMethod } from "../status";
 import { createIdentityApi } from "./identity";
 import { getSignInMethod, getVerifyMethod } from "./identity/api";
 import { createProductsApi } from "./products";
 import { getProductsMethod } from "./products/api";
 
-const ApiRoutes = {
+export const ApiRoutes = {
   status: "/",
   identity: {
     signIn: "/signin",

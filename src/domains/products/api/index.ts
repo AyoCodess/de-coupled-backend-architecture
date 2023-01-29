@@ -9,3 +9,5 @@ export function getProductsMethod(
     res.send(getProducts);
   });
 }
+
+export * from "./get_products";

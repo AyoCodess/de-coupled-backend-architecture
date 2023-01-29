@@ -3,7 +3,7 @@ import express from "express";
 import request from "supertest";
 import { getSignInMethod, getVerifyMethod } from ".";
 import { createIdentityApi } from "..";
-import { ApiRoutes } from "../../types";
+import { ApiRoutes } from "../../createRouter";
 
 describe("Sign In and verify APIs", () => {
   let router = express();
