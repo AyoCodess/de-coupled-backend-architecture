@@ -1,17 +1,19 @@
 import express, { Router } from "express";
 import request from "supertest";
-import { createRouter } from "../domains";
+import { getStatusMethod } from ".";
+import { ApiRoutes } from "../domains/types";
 import { getStatus } from "./get_server_status";
 
-describe("product api tests", () => {
-  let router = Router();
+describe("getStatusMethod", () => {
+  let router = express();
+  const statusRoute = ApiRoutes.status;
 
   beforeEach(() => {
-    createRouter(router);
+    getStatusMethod(router, getStatus, statusRoute);
   });
 
-  it("should return test string", async () => {
-    const response = await request(router).get(status);
+  it("should return 'ok'", async () => {
+    const response = await request(router).get(statusRoute);
     expect(response.status).toBe(200);
     expect(response.text).toEqual("ok");
   });

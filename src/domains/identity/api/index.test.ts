@@ -1,31 +1,38 @@
 import { describe, expect } from "@jest/globals";
-import express, { Router } from "express";
+import express from "express";
 import request from "supertest";
-import { createVerify } from "./verify";
+import { getSignInMethod, getVerifyMethod } from ".";
+import { createIdentityApi } from "..";
 import { ApiRoutes } from "../../types";
-import { createSignIn } from "./sign_in";
-import { createRouter } from "../../createRouter";
 
 describe("Sign In and verify APIs", () => {
-  let router = Router();
-  const signIn = ApiRoutes.identity.signIn;
-  const verify = ApiRoutes.identity.verify;
+  let router = express();
+  const identity = createIdentityApi();
+  const signInRoute = ApiRoutes.identity.signIn;
+  const verifyRoute = ApiRoutes.identity.verify;
 
   beforeEach(() => {
-    createRouter(router);
-    // createSignIn();
-    // createVerify();
+    getSignInMethod(router, identity.api.signIn, signInRoute);
+    getVerifyMethod(router, identity.api.verify, verifyRoute);
   });
 
   it("should return test string", async () => {
-    const response = await request(router).get(signIn);
+    const response = await request(router).get(signInRoute);
     expect(response.status).toBe(200);
-    expect(response.text).toBe("signing in...");
+    expect(response.body).toEqual({
+      ok: true,
+      message: "AUTHORIZED",
+      error: null,
+    });
   });
 
   it("should return test string", async () => {
-    const response = await request(router).get(verify);
+    const response = await request(router).get(verifyRoute);
     expect(response.status).toBe(200);
-    expect(response.text).toBe("verifying user...");
+    expect(response.body).toEqual({
+      ok: true,
+      message: "VERIFYING",
+      error: null,
+    });
   });
 });
