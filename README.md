@@ -14,9 +14,13 @@ looking at the concept of separating our Api from any framework we may choose.
 
 `createRouter(router);` could take in any router.
 
-For example we currently use express so we pass the `const router = Router();` into the `createRouter` function. This allows us create an api that is not coupled with the framework.
+For example we currently use express so we pass the `const router = Router();` into the `createRouter` function.
 
-`repo.ts` is where we create our framework specific functions and import them into their wrappers.
+This function also houses the creation of our api and returns it to the framework to use via helper functions.
+
+This pattern also enables easy unit testing of each route.
+
+The `repo.ts` files is where we create our api return values.
 
 ### Tech stack
 
