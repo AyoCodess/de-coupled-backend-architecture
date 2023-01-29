@@ -16,7 +16,7 @@ describe("Sign In and verify APIs", () => {
     getVerifyMethod(router, identity.api.verify, verifyRoute);
   });
 
-  it("should return test string", async () => {
+  it("should return data object", async () => {
     const response = await request(router).get(signInRoute);
     expect(response.status).toBe(200);
     expect(response.body).toEqual({
@@ -26,7 +26,7 @@ describe("Sign In and verify APIs", () => {
     });
   });
 
-  it("should return test string", async () => {
+  it("should return data object", async () => {
     const response = await request(router).get(verifyRoute);
     expect(response.status).toBe(200);
     expect(response.body).toEqual({
