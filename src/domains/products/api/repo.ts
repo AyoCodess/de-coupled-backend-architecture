@@ -1,5 +1,3 @@
-import { Router } from "express";
-import { ApiRoutes } from "../../types";
 
 export const productData = {
   shoe: "£100",
@@ -7,11 +5,6 @@ export const productData = {
   trousers: "£75",
 };
 
-const router = Router();
-
 export function getProducts() {
-  const products = ApiRoutes.products.getProducts;
-  router.get(products, (req, res) => {
-    res.send(productData);
-  });
+return productData;
 }
