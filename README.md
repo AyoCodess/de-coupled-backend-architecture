@@ -1,4 +1,4 @@
-## Modular Architecture
+## Modular Backend Architecture
 
 ### Get started
 
