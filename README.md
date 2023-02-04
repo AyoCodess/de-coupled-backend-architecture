@@ -1,4 +1,4 @@
-## De-coupled Architecture
+## Modular Architecture
 
 ### Get started
 
